@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <title>WPfresh.co - Cài đặt Wordpress trên VPS Hosting đơn giản, tự động</title>
+    <meta name="description" content="WPfresh giúp bạn cài đặt Wordpress lên VPS hosting tự dộng và hoàn toàn miễn phí.">
+    
+    <meta property="og:title" content="Cài đặt Wordpress trên VPS Hosting đơn giản, tự động" />
+	<meta property="og:site_name" content="WPfresh.co" />
+	<meta property="og:url" content="http://wpfresh.co" />
+	<meta property="og:description" content="WPfresh giúp bạn cài đặt Wordpress lên VPS hosting tự dộng và hoàn toàn miễn phí. WPfresh sử dụng Bash Shell trên Unix để thực hiện, mã nguồn mở nên bạn có thể xem mã nguồn trên Github và Fork nó." />
+	<meta property="og:image" content="//wpfresh.co/img/social/fb.png" />
+
+    <!-- Prefetch DNS for external assets (Twitter widgets etc). -->
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//themes.googleusercontent.com">
+	<link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <link rel="apple-touch-icon-precomposed" size="152x152" href="../favicon/img/apple-touch-icon-precomposed-152.png">
+    <link rel="apple-touch-icon-precomposed" size="120x120" href="../favicon/img/apple-touch-icon-precomposed-120.png">
+    <link rel="apple-touch-icon-precomposed" size="76x76" href="../img/favicon/apple-touch-icon-precomposed-76.png">
+    <link rel="apple-touch-icon-precomposed" href="../img/favicon/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="../img/favicon/favicon.png" type="image/ico">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="css/style.min.css"> </head>
+
+<body>
+    <header class="header">
+        <div class="grid">
+            <div class="grid__col--7 title">
+                <h1 class="title__text">WPfresh</h1>
+                <a href="https://github.com/wpfresh/WPfresh" target="_blank">
+                    <svg class="icon-github3" width="32" height="32" viewBox="0 0 32 32" x="144" y="0">
+                        <path fill="#333" d="M16 25.997c-0.599 0-1.197-0.31-1.817-0.93-0.244-0.244-0.244-0.64 0-0.884s0.64-0.244 0.884 0c0.381 0.382 0.687 0.567 0.933 0.567s0.552-0.185 0.933-0.567c0.244-0.244 0.64-0.244 0.884 0s0.244 0.64 0 0.884c-0.62 0.62-1.218 0.93-1.817 0.93zM0 16.422c0 1.559 0.133 2.973 0.4 4.24s0.642 2.367 1.125 3.298c0.483 0.931 1.094 1.747 1.833 2.448s1.542 1.279 2.408 1.733c0.867 0.454 1.858 0.822 2.975 1.102s2.253 0.477 3.408 0.589 2.428 0.168 3.817 0.168c1.389 0 2.664-0.056 3.825-0.168s2.3-0.308 3.417-0.589c1.117-0.28 2.111-0.648 2.983-1.102s1.681-1.032 2.425-1.733c0.744-0.701 1.358-1.517 1.842-2.448s0.861-2.030 1.133-3.298c0.272-1.268 0.408-2.681 0.408-4.24 0-2.793-0.867-5.199-2.6-7.218 0.1-0.269 0.186-0.578 0.258-0.925s0.142-0.838 0.208-1.472c0.067-0.634 0.042-1.366-0.075-2.196s-0.336-1.677-0.658-2.541l-0.25-0.051c-0.167-0.034-0.439-0.022-0.817 0.034s-0.819 0.157-1.325 0.303c-0.506 0.146-1.158 0.435-1.958 0.867s-1.644 0.979-2.533 1.641c-1.511-0.46-3.594-0.941-6.25-0.941s-4.744 0.481-6.267 0.941c-0.889-0.662-1.736-1.206-2.542-1.632s-1.45-0.718-1.933-0.875c-0.483-0.157-0.931-0.258-1.342-0.303s-0.675-0.059-0.792-0.042c-0.117 0.017-0.203 0.036-0.258 0.059-0.322 0.864-0.544 1.711-0.667 2.541s-0.15 1.559-0.083 2.187c0.067 0.628 0.139 1.122 0.217 1.481s0.167 0.667 0.267 0.925c-1.733 2.008-2.6 4.414-2.6 7.218zM4.267 19.981c0-1.813 0.667-3.457 2-4.933 0.4-0.45 0.864-0.791 1.392-1.022s1.128-0.363 1.8-0.394 1.314-0.025 1.925 0.019c0.611 0.044 1.367 0.103 2.267 0.178s1.678 0.113 2.333 0.113c0.655 0 1.433-0.037 2.333-0.113s1.656-0.134 2.267-0.178c0.611-0.044 1.253-0.050 1.925-0.019s1.275 0.163 1.808 0.394c0.533 0.231 1 0.572 1.4 1.022 1.333 1.476 2 3.12 2 4.933 0 1.063-0.111 2.010-0.333 2.842s-0.503 1.529-0.842 2.091c-0.339 0.563-0.814 1.038-1.425 1.426s-1.203 0.688-1.775 0.9c-0.572 0.212-1.311 0.378-2.217 0.497s-1.717 0.191-2.433 0.216c-0.717 0.025-1.619 0.038-2.708 0.038s-1.989-0.013-2.7-0.038c-0.711-0.025-1.519-0.097-2.425-0.216s-1.644-0.285-2.217-0.497c-0.572-0.213-1.164-0.513-1.775-0.9s-1.086-0.863-1.425-1.426c-0.339-0.563-0.62-1.26-0.842-2.091s-0.333-1.779-0.333-2.842zM8 19c0-1.657 0.895-3 2-3s2 1.343 2 3c0 1.657-0.895 3-2 3s-2-1.343-2-3zM20 19c0-1.657 0.895-3 2-3s2 1.343 2 3c0 1.657-0.895 3-2 3s-2-1.343-2-3z"></path>
+                    </svg>
+                </a>
+                <p>Cài đặt Wordpress trên VPS đơn giản, dễ dàng, nhanh chóng và tự động</p>
+                <button class="btn--default" data-cta-target=".js-dialog">XEM VIDEO
+                    <svg class="icon-play2" width="32" height="32" viewBox="0 0 32 32" x="0" y="0">
+                        <path fill="#333" d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM12 9l12 7-12 7z"></path>
+                    </svg>
+                </button>
+                <a href="#cau-hinh">
+                    <button class="btn--success">Dùng ngay bây giờ
+                        <svg class="icon-circle-down" width="32" height="32" viewBox="0 0 32 32" x="48" y="0">
+                            <path fill="#ffffff" d="M32 16c0-8.837-7.163-16-16-16s-16 7.163-16 16 7.163 16 16 16 16-7.163 16-16zM3 16c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13-13-5.82-13-13z"></path>
+                            <path fill="#ffffff" d="M9.914 11.086l-2.829 2.829 8.914 8.914 8.914-8.914-2.828-2.828-6.086 6.086z"></path>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+            <div class="js-dialog modal dialog">
+                <svg class="fa-close" width="32" height="32" viewBox="0 0 32 32" x="0" y="0">
+                    <path fill="#ffffff" d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
+                </svg>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/CikgzCHXZdo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </header>
+    <main ng-app>
+        <div class="tabs tabs-style-iconbox">
+            <nav>
+                <ul>
+                    <li><a href="#cau-hinh"><span>Cấu hình</span></a></li>
+                    <li><a href="#comment" onclick="return disqus(),!1"><span>Bình luận</span></a></li>
+                </ul>
+            </nav>
+            <div class="grid content-wrap">
+                <section id="cau-hinh">
+                    <div class="notice">
+                        <p><span class="notice__tit">WPfresh ‘Bash Shell’</span> chỉ làm việc trên hệ điều hành Ubuntu 14.04 và các bản trở về sau, hoạt động tốt nhất trên Cloud VPS từ DigitalOcean.com và Linode.com</p>
+                    </div>
+                    <form id="configurator">
+                        <fieldset>
+                            <input type="checkbox" id="general" class="section">
+                            <legend>
+                                <label for="general" class="text__bold">
+                                    <span class="toggle" data-exand="►" data-collapse="▼"></span>Cấu hình chung
+                                </label>
+                            </legend>
+                            <div class="subsection">
+                                <label>
+                                    <input type="text" ng-model="ip_server" placeholder="ex: 172.18.207.111">Địa chỉ IP Server
+                                </label>
+                                <label>
+                                    <input type="text" ng-model="domain" placeholder="ex: uxfresh.com"> Tên tên miền
+                                </label>
+                                <label>
+                                    <input type="text" ng-model="url" placeholder="ex: www.uxfresh.com"> Địa chỉ truy cập trang web
+                                </label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" id="database" class="section">
+                            <legend>
+                                <label for="database" class="text__bold">
+                                    <span class="toggle" data-exand="►" data-collapse="▼"></span>Cấu hình Stack và Cơ sở dữ liệu
+                                </label>
+                            </legend>
+                            <div class="subsection">
+                                <fieldset>
+                                    <legend class="label">
+                                        <label for="stack">
+                                            Chọn Stack
+                                        </label>
+                                    </legend>
+                                    <input type="radio" id="stack" name="stack" ng-model="stack" value="lemp" class="enable">
+                                    <label class="enable" for="stack">LEMP</label>
+                                    <input type="radio" id="lemh" name="stack" ng-model="stack" value="lemh" class="configure" disabled>
+                                    <label class="enable" for="lemh">LEMH</label>
+                                </fieldset>
+                                <fieldset>
+                                    <legend class="label">
+                                        <label for="hqt">
+                                            Chọn Hệ quản trị cơ sở dữ liệu
+                                        </label>
+                                    </legend>
+                                    <input type="radio" id="hqt" name="hqt" ng-model="hqt" value="mysql" class="enable">
+                                    <label class="enable" for="hqt">MySQL</label>
+                                    <input type="radio" id="mariadb" name="hqt" ng-model="hqt" value="mariadb" class="configure">
+                                    <label class="enable" for="mariadb">MariaDB</label>
+                                </fieldset>
+                                <label>
+                                    <input type="password" ng-model="mariadb_root_pass" placeholder="*********">Password 'root' user cho HQT CSDL
+                                </label>
+                                <label>
+                                    <input type="text" ng-model="database_name" placeholder="ex: wordpress"> Tên database
+                                </label>
+                                <label>
+                                    <input type="text" ng-model="database_user" placeholder="*********"> Database user
+                                </label>
+                                <label>
+                                    <input type="password" ng-model="database_user_pass" placeholder="*********"> Password cho Database user bên trên
+                                </label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" id="security" class="section" data-skip="3">
+                            <legend>
+                                <label for="security" class="text__bold"><span class="toggle" data-exand="►" data-collapse="▼"></span> Cấu hình bảo mật
+                                </label>
+                            </legend>
+                            <div class="subsection">
+                                <fieldset>
+                                    <legend class="label">
+                                        <label for="firewall">
+                                            Tường lửa IPtables
+                                        </label>
+                                    </legend>
+                                    <input type="radio" id="firewall" name="firewall" ng-model="firewall" value="Co" class="enable">
+                                    <label class="enable" for="firewall">Có</label>
+                                    <input type="radio" id="khong" name="firewall" ng-model="firewall" value="Khong" class="configure">
+                                    <label class="enable" for="khong">Tự cấu hình</label>
+                                </fieldset>
+                                <fieldset>
+                                    <legend class="label">
+                                        <label for="fail2ban">
+                                            Fail2ban
+                                        </label>
+                                    </legend>
+                                    <input type="radio" id="fail2ban" name="f2b" ng-model="fail2ban" value="Co" class="configure">
+                                    <label class="enable" for="fail2ban">Có</label>
+                                    <input type="radio" id="f2b.k" name="f2b" ng-model="fail2ban" value="Khong" class="skip">
+                                    <label class="enable" for="f2b.k">Không</label>
+                                </fieldset>
+                                <fieldset>
+                                    <legend class="label">
+                                        <label for="2fa">
+                                            Xác minh 2 bước với DuoSecurity.com cho SSH
+                                        </label>
+                                    </legend>
+                                    <input type="radio" id="2fa" name="mode_css_example" ng-model="tfa" class="configure" value="1">
+                                    <label class="enable" for="2fa">Có</label>
+                                    <input type="radio" id="2fa.configure" name="mode_css_example" ng-model="tfa" class="enable" value="2">
+                                    <label class="enable" for="2fa.configure">Không</label>
+                                    <div class="subsection">
+                                        <label>
+                                            <input type="text" name="Integration key" ng-model="i_k" placeholder="ex: DI0VUV7QDFOU..."> Integration key
+                                        </label>
+                                        <label>
+                                            <input type="text" name="Secret key" ng-model="s_k" placeholder="ex: nO9ooOapj3KUdkl..."> Secret key
+                                        </label>
+                                        <label>
+                                            <input type="text" name="API hostname" ng-model="a_h" data-skip="3" placeholder="ex: api-8d5xxxx.duosecurity.com"> API hostname
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" id="Themes" class="section" data-skip="3">
+                            <legend>
+                                <label for="Themes" class="text__bold"><span class="toggle" data-exand="►" data-collapse="▼"></span> Cấu hình Themes và Plugin Wordpress
+                                </label>
+                            </legend>
+                            <div class="subsection">
+                                <fieldset>
+                                    <legend class="label">
+                                        <label for="Plugin">
+                                            Bộ plugin Wordpress miễn phí nên cài khi bắt đầu
+                                        </label>
+                                    </legend>
+                                    <input type="radio" id="Plugin" name="Plugin" ng-model="plugin" value="Co" class="enable">
+                                    <label class="enable" for="Plugin">Có</label>
+                                    <input type="radio" id="Plugin.configure" name="Plugin" ng-model="plugin" value="Khong" class="configure">
+                                    <label class="enable" for="Plugin.configure">Không</label>
+                                </fieldset>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="code"> <span class="code__dot"></span> </div>
+                    <div class="code__output"> <pre><code>wget http://git.io/vkBSa -O wpfresh &amp;&amp; sh wpfresh {{ip_server}} {{domain}} {{url}} {{stack}} {{hqt}} {{mariadb_root_pass}} {{database_name}} {{database_user}} {{database_user_pass}} {{firewall}} {{fail2ban}} <span ng-if="tfa == 1">{{i_k}} {{s_k}} {{a_h}}</span><span ng-if="tfa == 2">{{tfa}} {{tfa}} {{tfa}}</span> {{plugin}}</code></pre> </div>
+                </section>
+                <section id="comment">
+                    <div class="comment clearfix">
+                        <div id="disqus_thread"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="grid">
+            <div class="grid__col--4"> <small> © 2015 Creat by Ga Beo.</small> </div>
+            <div class="grid__col--6">
+                <div class="addthis_native_toolbox"></div>
+            </div>
+            <div class="grid__col--2 right"> <small>info.gabeo@gmail.com</small> </div>
+        </div>
+    </footer>
+    <script async src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script async src="js/main.min.js"></script>
+    <script async src="js/disqus.min.js"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5567e1e67d72e271" async="async"></script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  		ga('create', 'UA-63686206-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+</body>
+
+</html>
